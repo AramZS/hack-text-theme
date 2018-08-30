@@ -4,7 +4,7 @@
  * @subpackage Magazeen_Theme
  */
 ?>
-				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+				<?php if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar() ) : ?>
 				
 					<li><h5>Widget Ready</h5>
 						<ul>
@@ -15,17 +15,17 @@
 						
 					<li><h5>Pages</h5>
 						<ul>
-							<?php wp_list_pages('title_li=' ); ?>
+							<?php wp_list_pages( 'title_li=' ); ?>
 						</ul>
 					</li>
 		
 					<li><h5>Archives</h5>
 						<ul>
-							<?php wp_get_archives('type=monthly'); ?>
+							<?php wp_get_archives( 'type=monthly' ); ?>
 						</ul>
 					</li>
 		
-					<?php wp_list_categories('show_count=1&title_li=<h5>Categories</h5>'); ?>
+					<?php wp_list_categories( 'show_count=1&title_li=<h5>Categories</h5>' ); ?>
 		
 					<?php if ( is_home() || is_page() ) { ?>
 		

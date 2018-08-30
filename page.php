@@ -13,38 +13,48 @@ get_header(); ?>
 			<div class="col-580 left">
 			
 				<?php
-					if (have_posts()) : 
-						while (have_posts()) : the_post(); $category = get_the_category();
+				if ( have_posts() ) :
+					while ( have_posts() ) :
+						the_post();
+						$category = get_the_category();
 				?>
 			
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
-					<div class="post-meta clearfix">
+				<div class="post-meta clearfix">
 				
-						<h3 class="post-title left"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+					<h3 class="post-title left"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 						
-						<p class="post-info right">
-							<span>By <?php the_author_posts_link(); ?></span>
-						</p>
+					<p class="post-info right">
+						<span>By <?php the_author_posts_link(); ?></span>
+					</p>
 						
-					</div><!-- End post-meta -->
+				</div><!-- End post-meta -->
 					
-					<div class="post-box">
+				<div class="post-box">
 					
-						<div class="page-content">
+					<div class="page-content">
 					
-							<?php the_content( '' ); ?>
+						<?php the_content( '' ); ?>
 							
-						</div><!-- End post-content -->
+					</div><!-- End post-content -->
 											
-					</div><!-- End post-box -->
+				</div><!-- End post-box -->
 					
 				</div><!-- End post -->
 				
-				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+				<?php
+				wp_link_pages(
+					array(
+						'before'         => '<p><strong>Pages:</strong> ',
+						'after'          => '</p>',
+						'next_or_number' => 'number',
+					)
+				);
+?>
 				
 				<?php
-						endwhile;
+					endwhile;
 					endif;
 				?>
 				
