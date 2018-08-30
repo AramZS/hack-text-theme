@@ -105,7 +105,7 @@ function magazeen_comment( $comment, $args, $depth ) {
 
 					<?php if ( $comment_type == 'comment' ) : ?>	
 
-						<span class="date">on <?php the_time( 'l j, Y' ); ?></span>
+						<span class="date">on <?php comment_date(‘M j, Y’); ?></span>
 
 					<?php endif; ?>
 
